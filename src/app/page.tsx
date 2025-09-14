@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/card';
 import { ArrowRight, Code, FileText, CheckCircle, ShieldCheck, BookOpen, User, GraduationCap, Building2, Mail, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'; // Added Link import
 
 // Import local images from the src/app/images directory
 import pydahCollegeImage from '@/app/images/college-photo.jpg';
@@ -55,12 +56,14 @@ export default function HomePage() {
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your intelligent partner for education. Master complex topics, practice coding, and generate notes—all in one place.
           </p>
-          <Button
-            size="lg"
-            className="mt-10 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg transform hover:scale-105 transition-all duration-300 group"
-          >
-            Go to Dashboard <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link href="/dashboard" passHref> {/* Wrapped Button in Link */}
+            <Button
+              size="lg"
+              className="mt-10 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg transform hover:scale-105 transition-all duration-300 group"
+            >
+              Go to Dashboard <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </section>
 
         {/* College Overview Section */}
